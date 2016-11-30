@@ -106,3 +106,8 @@ ul.append(function (index, html) {
 
 var li = $('#test-div>ul>li');
 li.remove();
+
+
+var js = $('#test-div>ul>li:first-child');
+js.after('<li><span>Lua</span></li>');
+js.before('<li><span>lua</span></li>')
