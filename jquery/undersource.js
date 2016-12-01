@@ -97,3 +97,41 @@ register();//不执行
 //delay 延迟执行
 _.delay(log, 2000, 'hello world');
 var log = _.bind(console.log, console);
+
+//object
+//keys allKeys
+
+function Student(name, birth) {
+    this.name = name;
+    this.birth = birth;
+}
+var xiaoming = new Student('xiaoming', '1990');
+_.keys(xiaoming);//[name,birth];
+Student.prototype.school = 'N1 middle school';
+_.allKeys(xiaoming);//[name,birth,school]
+
+//values
+_.values(xiaoming);//['xiaoming','1990']
+
+
+//mapObject()
+var obj = { a: 1, b: 2, c: 3 };
+_.mapObject(obj, (v, k) => 100 + v);
+
+//invert
+_.invert(obj);//{1:a,2:b,3:c}
+
+//extend/extendOwn
+var a = { name: 'Bob', age: 10 };
+_.extend(a, { age: 15 }, { age: 88 });//{name:'Bob',age:88}
+
+
+////Chaining 链式调用
+$('a').attr('target', '_blank')
+    .append(' <i class="uk-icon-external-link"></i>')
+    .click(function () { });
+
+_.chain([1, 4, 9, 25, 36])
+    .map(Math.sqrt)
+    .filter((x) => x % 2 === 1)
+    .Value();
