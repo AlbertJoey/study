@@ -1,0 +1,2 @@
+appcmd.exe list wp //查看pid与应用程序池的对应关系
+cd C:Windows\System32\inetsrv //定位的到appcmd.exe程序所在位置
